@@ -1,0 +1,108 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=bMaz1OW29etbYq3iYxGFiikwHZhPUZ91"></script>
+		<style type="text/css">
+		body, html{width: 100%;height: 100%;margin:0;font-family:"微软雅黑";}
+		h1,p{
+		text-align:center;
+		}
+		</style>
+	</head>
+
+
+	<body>
+		<h1>浙江大学美食地图</h1>
+		<p><i>紫金港校区内的用餐地点</i></p>
+		<div id="allmap" style="width:90%; height: 600px; margin:0px auto; "></div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	var map = new BMap.Map("allmap");
+	map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);
+	map.addControl(new BMap.NavigationControl());
+    map.addControl(new BMap.ScaleControl());
+
+    var outline = [new BMap.Point(120.087004,30.31614),new BMap.Point(120.089448,30.301517),
+    				new BMap.Point(120.090993,30.3008),new BMap.Point(120.099006,30.301236),
+    				new BMap.Point(120.098718,30.311214),new BMap.Point(120.097892,30.315844),
+					new BMap.Point(120.094685,30.31494), new BMap.Point(120.094532,30.316865)];
+	var polygon = new BMap.Polygon(outline);
+	polygon.setFillColor("");
+	map.addOverlay(polygon);
+
+	var marker1 = new BMap.Marker(new BMap.Point(120.089506,30.314698));
+	map.addOverlay(marker1);
+	var tag1 = "<h3>吉利烘培</h3>"
+				+"<img style='float:right;margin:4px' id='imgDemo' src='http://p0.meituan.net/deal/201211/23/GOSSELIN.jpg#bd=baidu_map' width='109' height='85' title='吉利烘培'/>"
+				+"<p>蓝田门口的蛋糕甜品店</p>";
+	var infoWindow1 = new BMap.InfoWindow(tag1);
+	marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);map.centerAndZoom(new BMap.Point(120.091, 30.315), 17);});
+	infoWindow1.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker2 = new BMap.Marker(new BMap.Point(120.090566,30.313685));
+	map.addOverlay(marker2);
+	var tag2 = "<h3>清真餐厅</h3>"
+				+"<img style='float:right;margin:4px' id='imgDemo' src='https://imgsa.baidu.com/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=ee992d13bb0e7bec37d70bb34e47d25d/e7cd7b899e510fb3d8bc4e8bda33c895d1430c00.jpg' width='120' height='90' title='清真餐厅'/>"
+				+"<p>回族清真餐厅，位于食堂2楼西侧</p>";
+	var infoWindow2 = new BMap.InfoWindow(tag2);
+	marker2.addEventListener("click", function(){this.openInfoWindow(infoWindow2); map.centerAndZoom(new BMap.Point(120.091, 30.315), 17);});
+	infoWindow2.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker3 = new BMap.Marker(new BMap.Point(120.091725,30.313864));
+	map.addOverlay(marker3);
+	var tag3 = "<h3>风味餐厅</h3>"
+				+"<p>位于大食堂一楼东侧</p>";
+	var infoWindow3 = new BMap.InfoWindow(tag3);
+	marker3.addEventListener("click", function(){this.openInfoWindow(infoWindow3);map.centerAndZoom(new BMap.Point(120.093, 30.315), 17);});
+	infoWindow3.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker4 = new BMap.Marker(new BMap.Point(120.088446,30.313794));
+	map.addOverlay(marker4);
+	var tag4 = "<h3>思味.慕特</h3>"
+			+"<img style='float:right;margin:4px' id='imgDemo' src='http://img01.taopic.com/150429/318762-15042911294180.jpg ' width='160' height='125' title='思味'/>"
+			+"<p>云峰学园门口一家蛋糕店</p>";
+	var infoWindow4 = new BMap.InfoWindow(tag4);
+	marker4.addEventListener("click", function(){this.openInfoWindow(infoWindow4);map.centerAndZoom(new BMap.Point(120.091, 30.314), 17);});
+	infoWindow4.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker5 = new BMap.Marker(new BMap.Point(120.092039,30.309817));
+	map.addOverlay(marker5);
+	var tag5 = "<h3>临湖餐厅</h3>"
+				+"<img style='float:right;margin:4px' id='imgDemo' src='https://pic2.zhimg.com/e6dae07ac82092db3ce8cffb5f4d26b1_b.jpg ' width='120' height='90' title='临湖餐厅'/>"
+				+"<p>可欣赏湖景</p>";
+	var infoWindow5 = new BMap.InfoWindow(tag5);
+	marker5.addEventListener("click", function(){this.openInfoWindow(infoWindow5);map.centerAndZoom(new BMap.Point(120.095, 30.310), 17);});
+	infoWindow5.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker6 = new BMap.Marker(new BMap.Point(120.091033,30.302154));
+	map.addOverlay(marker6);
+	var tag6 = "<h3>学院咖啡</h3>"
+			+"<p>还没机会去</p>";
+	var infoWindow6 = new BMap.InfoWindow(tag6);
+	marker6.addEventListener("click", function(){this.openInfoWindow(infoWindow6);map.centerAndZoom(new BMap.Point(120.089, 30.311), 17);});
+	infoWindow6.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker7 = new BMap.Marker(new BMap.Point(120.093477,30.301788));
+	map.addOverlay(marker7);
+	var tag7 = "<h3>麦香餐厅</h3>"
+				+"<img style='float:right;margin:4px' id='imgDemo' src='http://qcloud.dpfile.com/pc/dHg9-HIUDfRZQ9zreV0i7KbbW771fiFt5thlw8a6pJCeuhZ1LiVZq04wyAl_j5xTF7VyRb1efu_m19nXPmKITg.jpg' width='120' height='90' title='麦香餐厅'/>"
+				+"<p>意面很好吃</p>";
+	var infoWindow7 = new BMap.InfoWindow(tag7);
+	marker7.addEventListener("click", function(){this.openInfoWindow(infoWindow7);map.centerAndZoom(new BMap.Point(120.095, 30.310), 17);});
+	infoWindow7.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+	var marker8 = new BMap.Marker(new BMap.Point(120.092906,30.315267));
+	map.addOverlay(marker8);
+	var tag8 = "<h3>一鸣牛奶</h3>"
+				+"<img style='float:right;margin:4px' id='imgDemo' src='https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1862057302,4131881320&fm=58&s=D4FE2D764D237F301C78107802005073' width='120' height='70' title='一鸣牛奶'/>"
+				+"<p>喜欢芒果黄桃酸奶</p>";
+	var infoWindow8 = new BMap.InfoWindow(tag8);
+	marker8.addEventListener("click", function(){this.openInfoWindow(infoWindow8);map.centerAndZoom(new BMap.Point(120.095, 30.310), 17);});
+	infoWindow8.addEventListener("close", function(){map.centerAndZoom(new BMap.Point(120.094, 30.309), 16);});
+
+
+</script>
